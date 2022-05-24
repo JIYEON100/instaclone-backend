@@ -1,0 +1,38 @@
+{
+  "name": "instaclone",
+  "version": "1.0.0",
+  "description": "Alito Backend.",
+  "scripts": {
+    "dev": "nodemon --exec babel-node server",
+    "migrate": "npx prisma migrate dev",
+    "studio": "npx prisma studio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JIYEON100/instaclone-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JIYEON100/instaclone-backend/issues"
+  },
+  "homepage": "https://github.com/JIYEON100/instaclone-backend#readme",
+  "main": "index.js",
+  "dependencies": {
+    "@prisma/client": "^3.14.0",
+    "apollo-server": "^2.25.3",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "graphql": "^15.8.0",
+    "graphql-tools": "^7.0.2",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "nodemon": "^2.0.16",
+    "prisma": "^3.14.0"
+  }
+}
