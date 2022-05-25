@@ -7,6 +7,9 @@ const resolverFn = async (_, {
   lastName,
   username,
   email,
+  location,
+  avatarURL,
+  githubUsername,
   password:newPassword,
 },
 { loggedInUser }
@@ -23,7 +26,10 @@ const resolverFn = async (_, {
       firstName, 
       lastName, 
       username, 
-      email, 
+      email,
+      location,
+      avatarURL,
+      githubUsername, 
       ...(uglyPassword && {password: uglyPassword}),
     },
   });
@@ -34,7 +40,8 @@ const resolverFn = async (_, {
   } else{
     return{
       ok: false,
-      error: "Could not update profile.",
+      // error: "Could not update profile.",
+      error: $error,
     };
   }
 };

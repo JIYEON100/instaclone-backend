@@ -9,13 +9,16 @@ export default {
       username,
       email,
       password,
+      location,
+      avatarURL,
+      githubUsername,
     }) => {
       try {
         const existingUser = await client.user.findFirst({
           where: {
             OR: [
               {
-                username,
+                username,  
               },
               {
                 email,
@@ -29,7 +32,7 @@ export default {
         const uglyPassword = await bcrypt.hash(password, 10);
         return client.user.create({
           data: {
-            username, email, firstName, lastName, password: uglyPassword,
+            username, email, firstName, lastName, location, avatarURL, githubUsername, password: uglyPassword,
         },
       });
       } catch(e) {
